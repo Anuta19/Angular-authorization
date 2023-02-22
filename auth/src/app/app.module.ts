@@ -1,19 +1,21 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {Routes, RouterModule} from '@angular/router';
-import { HomeComponent }   from './home.component';
-import { MainPage }   from './main-page.component';
+import { AuthComponent }   from './pages/auth-page.component';
+import { MainPage }   from './pages/main-page.component';
 import { AppComponent }   from './app.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes =[
-    { path: 'home', component: HomeComponent},
+    { path: 'auth', component: AuthComponent},
     { path: 'main', component: MainPage },
+    { path: '', component: MainPage },
 ];
 
 @NgModule({
-    imports:      [ BrowserModule, RouterModule.forRoot(appRoutes), ReactiveFormsModule],
-    declarations: [ AppComponent, HomeComponent,MainPage],
+    imports:      [ BrowserModule, RouterModule.forRoot(appRoutes), ReactiveFormsModule, HttpClientModule, FormsModule],
+    declarations: [ AppComponent, AuthComponent,MainPage],
     bootstrap:    [ AppComponent ]
 })
 

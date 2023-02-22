@@ -2,7 +2,7 @@
 import { Component} from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-import {DataService} from './data.service';
+import {AuthService} from './services/auth.service';
    
 @Component({
     selector: 'my-app',
@@ -12,44 +12,18 @@ import {DataService} from './data.service';
         input.ng-touched.ng-valid {border:solid green 2px;}
     `],
     template: `
-                <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
-                
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input class="form-control" name="email" formControlName="userEmail" />
-                          
-                        <div class="alert alert-danger"
-                            *ngIf="myForm.controls['userEmail'].invalid && myForm.controls['userEmail'].touched">
-                            Некорректный email
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Пароль</label>
-                        <input class="form-control" name="password" formControlName="userPassword" />
-                        <div class="alert alert-danger"
-                            *ngIf="myForm.controls['userPassword'].invalid && myForm.controls['userPassword'].touched">
-                            Некорректный пароль
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-default">
-                            Отправить
-                        </button>
-                    </div>
-                  
-                </form>
-                <router-outlet></router-outlet>	
+    <h3>Авторизация</h3>
                 `,
-    providers: [DataService]
+    providers: [AuthService]
                 
 })
 
 
 export class AppComponent 
 { 
+    /*
     myForm : FormGroup;
-    constructor(public router: Router, private dataService: DataService)
+    constructor(public router: Router, private auth: AuthService)
     {
         
         this.myForm = new FormGroup({
@@ -67,10 +41,23 @@ export class AppComponent
         
 
     }
+
     
     submit()
     {
-        if ((this.myForm.value.userEmail==this.dataService.email) && (this.myForm.value.userPassword==this.dataService.password))
+        this.auth.userList.forEach((elem1, index) => {elem1;
+            if(this.myForm.value.userEmail == elem1.email && this.myForm.value.userPassword == elem1.password)
+            {
+                this.router.navigateByUrl('/main');
+            }
+            else
+            {
+                alert("Что-то не так");
+            }
+        });
+    }
+        /*
+        if ((this.myForm.value.userEmail==this.auth.userList.email) && (this.myForm.value.userPassword==this.auth.userList.password))
         {
             //console.log(1111);
             this.router.navigateByUrl('/main');
@@ -79,7 +66,9 @@ export class AppComponent
         {
             alert("Что-то не так");
         }  
-    }
+        */
+    
+    
 
 }
 
