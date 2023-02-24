@@ -13,8 +13,8 @@ import {AuthService} from './services/auth.service';
     `],
     template: `
     <h3>Авторизация</h3>
+    <router-outlet></router-outlet>	
                 `,
-    providers: [AuthService]
                 
 })
 
