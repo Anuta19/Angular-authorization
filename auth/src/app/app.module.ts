@@ -7,10 +7,16 @@ import { AppComponent }   from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-const appRoutes: Routes =[
-    { path: 'auth', component: AuthComponent},
-    { path: 'main', component: MainPage },
-    { path: '', component: MainPage },
+const appRoutes: Routes = [
+    {
+        path: '',
+        component: AppComponent,
+        children: [
+            { path: 'auth', component: AuthComponent},
+            { path: 'main', component: MainPage },
+            { path: '**', redirectTo: '/auth' }
+        ]
+    },
 ];
 
 @NgModule({

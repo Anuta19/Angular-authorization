@@ -7,7 +7,6 @@ import { AuthService } from '../services/auth.service';
 @Component({
     selector: 'auth-app',
     template: `
-    <h3>Авторизация</h3>
     <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
                 
         <div class="form-group">
@@ -36,11 +35,7 @@ import { AuthService } from '../services/auth.service';
         </div>
   
     </form>
-
-    <router-outlet></router-outlet>	
-            `,
-        providers: [AuthService]
-    
+            `,    
 })
 
 

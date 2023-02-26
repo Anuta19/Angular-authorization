@@ -13,14 +13,16 @@ import {AuthService} from './services/auth.service';
     `],
     template: `
     <h3>Авторизация</h3>
+    <router-outlet></router-outlet>	
                 `,
-    providers: [AuthService]
                 
 })
 
 
 export class AppComponent 
 { 
+
+    
     /*
     myForm : FormGroup;
     constructor(public router: Router, private auth: AuthService)
