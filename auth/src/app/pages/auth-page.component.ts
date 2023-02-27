@@ -8,6 +8,7 @@ import { AuthService } from '../services/auth.service';
 @Component({
     selector: 'auth-app',
     template: `
+    <h3>Авторизация</h3>
     <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
                 
         <div class="form-group">
@@ -24,7 +25,7 @@ import { AuthService } from '../services/auth.service';
             <label>Пароль</label>
             <input class="form-control" name="password" formControlName="userPassword" />
             <div class="alert alert-danger"
-                ngIf="myForm.controls['userPassword'].invalid && myForm.controls['userPassword'].touched">
+                *ngIf="myForm.controls['userPassword'].invalid && myForm.controls['userPassword'].touched">
                 Некорректный пароль
             </div>
         </div>
@@ -64,6 +65,9 @@ export class AuthComponent {
 
     submit()
     {
+        const arr = undefined;
+
+        if(arr){
         this.auth.userList.forEach((elem1, index) => {elem1;
             if(this.myForm.value.userEmail == elem1.email && this.myForm.value.userPassword == elem1.password)
             {
@@ -73,6 +77,7 @@ export class AuthComponent {
             {
                 alert("Что-то не так");
             }
-        }); 
-    }
+            }); 
+        }
+}
 }

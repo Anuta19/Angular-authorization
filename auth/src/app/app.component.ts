@@ -13,7 +13,6 @@ import {AuthService} from './services/auth.service';
         input.ng-touched.ng-valid {border:solid green 2px;}
     `],
     template: `
-    <h3>Авторизация</h3>
     <router-outlet></router-outlet>	
                 `,
                 

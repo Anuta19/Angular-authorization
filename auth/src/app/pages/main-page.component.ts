@@ -9,7 +9,7 @@ import { CurrencyService } from '../services/currency.service';
     <div>
     <p>1 USD <span>=</span> {{bynToUsd}} BYN</p>
     <p>1 EUR <span>=</span> {{bynToEur}} BYN</p>
-    <p>1 RUB <span>=</span> {{bynToRub}} BYN</p>
+    <p>100 RUB <span>=</span> {{bynToRub}} BYN</p>
   </div>
   `
 })
@@ -31,15 +31,27 @@ export class MainPage {
 
   getBaseRates() {
     this.currency
-      .getBaseCurrencyData(this.currencybyn)
+      .getBaseCurrencyDataUSD(this.currencybyn)
       .subscribe((data: any) => {
         const rates = data.rates;
-        this.bynToUsd = 1/rates[this.curencyusd]
-        this.bynToEur = 1/rates[this.currencyeur]
-        this.bynToRub = 100/rates[this.currencyrub]
+        this.bynToUsd = data.Cur_OfficialRate;
+      });
 
+      this.currency
+      .getBaseCurrencyDataEUR(this.currencybyn)
+      .subscribe((data: any) => {
+        const rates = data.rates;
+        this.bynToEur = data.Cur_OfficialRate;
+      });
+
+      this.currency
+      .getBaseCurrencyDataRUB(this.currencybyn)
+      .subscribe((data: any) => {
+        const rates = data.rates;
+        this.bynToRub = data.Cur_OfficialRate;
       });
   }
+  
 
   constructor(private currency:CurrencyService){}
 
