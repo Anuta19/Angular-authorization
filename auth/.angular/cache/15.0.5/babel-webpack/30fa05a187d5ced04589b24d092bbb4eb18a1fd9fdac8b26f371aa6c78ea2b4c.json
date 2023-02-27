@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { HomeComponent } from './home.component';\nimport { NotFoundComponent } from './not-found.component';\nconst appRoutes = [{\n  path: '',\n  component: HomeComponent\n}, {\n  path: '**',\n  component: NotFoundComponent\n}];\nexport class AppModule {}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
