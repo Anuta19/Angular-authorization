@@ -65,6 +65,21 @@ export class AuthComponent {
 
     submit()
     {
+       this.auth.login(this.myForm.value.userEmail, this.myForm.value.userPassword)
+       {
+        if(true)
+        {
+            console.log(11111);
+            this.router.navigateByUrl('/main');
+        }
+        else
+        {
+            alert("Что-то не так");
+        }
+    }
+       
+
+/*
         const arr = undefined;
 
         if(arr){
@@ -79,5 +94,6 @@ export class AuthComponent {
             }
             }); 
         }
-}
+        */
+    }
 }

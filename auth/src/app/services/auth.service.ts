@@ -7,18 +7,18 @@ import { Injectable } from '@angular/core';
 
 export class AuthService {
 
-    "userList":
+    userList:
     [{
-        "email": "111@mtp.by",
-        "password": "qawsed191"
+        email: "111@mtp.by",
+        password: "qawsed191"
     },
     {
-        "email": "admin@mail.ru",
-        "password": "admin1111"
+        email: "admin@mail.ru",
+        password: "admin1111"
     },
     {
-        "email": "log@yandex.ru", 
-        "password": "password"
+        email: "log@yandex.ru", 
+        password: "password"
     }]
 
 

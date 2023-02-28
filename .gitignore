@@ -1,2 +1,3 @@
-
-auth/src/app/data.service.ts
+.angular
+node_modules
+dist
