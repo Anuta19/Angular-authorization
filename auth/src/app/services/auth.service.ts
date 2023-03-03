@@ -5,8 +5,14 @@ import { Injectable } from '@angular/core';
    providedIn: 'root'
 })
 
+
+  
 export class AuthService {
 
+    constructor() {
+    }
+
+    
     userList:
     [{
         email: "111@mtp.by",
@@ -23,14 +29,10 @@ export class AuthService {
 
 
 
-    constructor() {
-    }
-
-
-    login(userEmail: string, userPassword: string)
+    login(userEm: string, userPas: string)
     {
-        this.userList.forEach((elem1, index) => {elem1;
-              if(userEmail == elem1.email && userPassword == elem1.password)
+        this.userList.some((elem1) => {elem1;
+              if(elem1.email == userEm  && elem1.password == userPas)
               {
                 return true;
               }
@@ -38,6 +40,6 @@ export class AuthService {
               {
                 return false;
               }
-          });
+          }); 
     }
 }

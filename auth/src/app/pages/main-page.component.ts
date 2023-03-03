@@ -5,13 +5,14 @@ import { CurrencyService } from '../services/currency.service';
   
 @Component({
     selector: 'main-app',
-    template: `
+    template: ` 
     <div>
     <p>1 USD <span>=</span> {{bynToUsd}} BYN</p>
     <p>1 EUR <span>=</span> {{bynToEur}} BYN</p>
     <p>100 RUB <span>=</span> {{bynToRub}} BYN</p>
   </div>
   `
+  //перенести в фьючерс templates
 })
 export class MainPage {
 
@@ -25,7 +26,8 @@ export class MainPage {
   bynToEur = 0;
   bynToRub = 0;
 
-  ngOnInit() {
+  ngOnInit() 
+  {
     this.getBaseRates();
   }
 
