@@ -35,18 +35,17 @@ export class AuthComponent {
 
     submit()
     {
-       this.auth.login(this.myForm.value.userEm, this.myForm.value.userPas)
+       this.auth.login(this.myForm.value.userEmail, this.myForm.value.userPassword)
        {
-        if(true)
-        {
-            console.log(11111);
-            this.router.navigateByUrl('/main');
+            if(true)
+            {
+                console.log(11111);
+                this.router.navigateByUrl('/main');
+            }
+            else
+            {
+                alert("Что-то не так");
+            }
         }
-        else
-        {
-            alert("Что-то не так");
-        }
-    }
-       
     }
 }
