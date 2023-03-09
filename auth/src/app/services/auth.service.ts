@@ -13,7 +13,7 @@ export class AuthService {
     }
 
     
-    userList:
+    userList = 
     [{
         email: "111@mtp.by",
         password: "qawsed191"
@@ -29,9 +29,9 @@ export class AuthService {
 
 
 
-    login(userEm: string, userPas: string)
+    login(userEm: string, userPas: string): boolean
     {
-        this.userList.some((elem1) => {elem1;
+        const result = this.userList.some((elem1) => {elem1;
               if(elem1.email == userEm  && elem1.password == userPas)
               {
                 return true;
@@ -41,5 +41,6 @@ export class AuthService {
                 return false;
               }
           }); 
+        return result;
     }
 }
