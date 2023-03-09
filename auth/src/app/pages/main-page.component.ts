@@ -5,15 +5,15 @@ import { CurrencyService } from '../services/currency.service';
   
 @Component({
     selector: 'main-app',
-    template: ` 
-    <div>
-    <p>1 USD <span>=</span> {{bynToUsd}} BYN</p>
-    <p>1 EUR <span>=</span> {{bynToEur}} BYN</p>
-    <p>100 RUB <span>=</span> {{bynToRub}} BYN</p>
-  </div>
-  `
+    template: `<div>
+      <p>1 USD <span>=</span> <main-child [bynToUsd]="bynToUsd"></main-child> BYN</p>
+      <p>1 EUR <span>=</span> <main-child [bynToEur]="bynToEur"></main-child> BYN</p>
+      <p>100 RUB <span>=</span> <main-child [bynToRub]="bynToRub"></main-child> BYN</p>
+  </div>`,    
+
   //перенести в фьючерс templates
 })
+
 export class MainPage {
 
   curencyusd = 'USD';
