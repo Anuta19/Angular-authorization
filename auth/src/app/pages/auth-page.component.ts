@@ -37,7 +37,7 @@ export class AuthComponent {
     {
        this.auth.login(this.myForm.value.userEmail, this.myForm.value.userPassword)
        {
-            if(true)
+            if(this.auth.login(this.myForm.value.userEmail, this.myForm.value.userPassword))
             {
                 console.log(11111);
                 this.router.navigateByUrl('/main');
