@@ -4,9 +4,9 @@ import { Component} from '@angular/core';
 @Component({
     selector: 'main-child',
     template: ` <div>
-      <p>1 USD <span>=</span> {{bynToUsd}} BYN</p>
-      <p>1 EUR <span>=</span> {{bynToEur}} BYN</p>
-      <p>100 RUB <span>=</span> {{bynToRub}} BYN</p>
+      <p>1 USD <span>=</span> <main-child [bynToUsd]="bynToUsd"></main-child> BYN</p>
+      <p>1 EUR <span>=</span> <main-child [bynToEur]="bynToEur"></main-child> BYN</p>
+      <p>100 RUB <span>=</span> <main-child [bynToRub]="bynToRub"></main-child> BYN</p>
   </div>`
 })
 export class ChildComponent { 

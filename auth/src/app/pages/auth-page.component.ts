@@ -39,7 +39,6 @@ export class AuthComponent {
        {
             if(this.auth.login(this.myForm.value.userEmail, this.myForm.value.userPassword))
             {
-                console.log(11111);
                 this.router.navigateByUrl('/main');
             }
             else

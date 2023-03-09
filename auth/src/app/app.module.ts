@@ -7,6 +7,8 @@ import { MainPage }   from './pages/main-page.component';
 import { AppComponent }   from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ChildComponent }   from './features/main-page-course.component';
+
 
 const appRoutes: Routes = [
     {
@@ -22,7 +24,7 @@ const appRoutes: Routes = [
 
 @NgModule({
     imports:      [ BrowserModule, RouterModule.forRoot(appRoutes), ReactiveFormsModule, HttpClientModule, FormsModule],
-    declarations: [ AppComponent, AuthComponent,MainPage],
+    declarations: [ AppComponent, AuthComponent,MainPage,ChildComponent],
     bootstrap:    [ AppComponent ]
 })
 
