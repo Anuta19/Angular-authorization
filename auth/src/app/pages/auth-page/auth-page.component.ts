@@ -7,7 +7,7 @@ import { AuthService } from '../services/auth.service';
   
 @Component({
     selector: 'auth-app',
-    templateUrl: './html/auth-page.html',    
+    templateUrl: './auth-page.html',    
 })
 
 

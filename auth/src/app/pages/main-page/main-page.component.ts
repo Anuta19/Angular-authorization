@@ -5,7 +5,7 @@ import { CurrencyService } from '../services/currency.service';
   
 @Component({
     selector: 'main-app',
-    templateUrl: `./html/main-page.html`,    
+    templateUrl: `./main-page.html`,    
 })
 
 export class MainPage {
