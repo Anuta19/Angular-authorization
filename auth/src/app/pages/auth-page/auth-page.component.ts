@@ -35,8 +35,7 @@ export class AuthComponent {
 
     submit()
     {
-       this.auth.login(this.myForm.value.userEmail, this.myForm.value.userPassword)
-       {
+
             if(this.auth.login(this.myForm.value.userEmail, this.myForm.value.userPassword))
             {
                 this.router.navigateByUrl('/main');
@@ -45,6 +44,6 @@ export class AuthComponent {
             {
                 alert("Что-то не так");
             }
-        }
+        
     }
 }
