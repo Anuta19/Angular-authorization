@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Авторизация</h3>
+    <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
+                
+        <div class="form-group">
+            <label>Email</label>
+            <input class="form-control" name="email" formControlName="userEmail" />
+          
+            <div class="alert alert-danger"
+                *ngIf="myForm.controls['userEmail'].invalid && myForm.controls['userEmail'].touched">
+                Некорректный email
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Пароль</label>
+            <input class="form-control" name="password" formControlName="userPassword" />
+            <div class="alert alert-danger"
+                *ngIf="myForm.controls['userPassword'].invalid && myForm.controls['userPassword'].touched">
+                Некорректный пароль
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-default">
+                Отправить
+            </button>
+        </div>
+  
+    </form>
+</body>
+</html>
