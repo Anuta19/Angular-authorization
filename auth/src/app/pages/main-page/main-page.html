@@ -1,3 +1,16 @@
+
+<div class="header">
+    <p>
+        <mat-toolbar>
+            <nav>
+                <a routerLink="/dashboard">Главная</a>
+                <a routerLink="/account">Счета</a>
+            </nav>
+            <router-outlet></router-outlet>
+        </mat-toolbar>
+    </p>
+</div>
+
 <div>
     <p>1 USD <span>=</span> {{bynToUsd}} BYN</p>
     <p>1 EUR <span>=</span> {{bynToEur}} BYN</p>
