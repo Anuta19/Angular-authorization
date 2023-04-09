@@ -6,11 +6,17 @@ import { MainPage }   from './main-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ChildComponent }   from '../../features/main-page-course/main-page-course.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { DashboardComponent }   from '../dashboard/dashboard.component';
+import { AccountComponent }   from '../account/account.component';
 
 const appRoutes: Routes = [
     {
         path: '',
-        component: MainPage
+        component: MainPage,
+        children: [
+            { path: 'main/dashboard', component: DashboardComponent },
+            { path: 'main/account', component: AccountComponent },
+        ]
     },
 ];
 
