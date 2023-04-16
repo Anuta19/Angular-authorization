@@ -7,7 +7,8 @@ import { AuthService } from '../../services/auth.service';
   
 @Component({
     selector: 'auth-app',
-    templateUrl: './auth-page.html',    
+    templateUrl: `./auth-page.html`,    
+    styleUrls: ['./auth-page.css'],
 })
 
 
@@ -16,9 +17,8 @@ export class AuthComponent {
     myForm : FormGroup;
     constructor(public router: Router, private auth: AuthService)
     {
-        
-        this.myForm = new FormGroup({
-             
+        this.myForm = new FormGroup
+        ({  
             "userEmail": new FormControl("", [
                                 Validators.required, 
                                 Validators.email,
@@ -26,7 +26,7 @@ export class AuthComponent {
             "userPassword": new FormControl("", [
                 Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$'),
                 Validators.minLength(8),
-            ])
+            ]),   
             
         });
         
@@ -36,14 +36,14 @@ export class AuthComponent {
     submit()
     {
 
-            if(this.auth.login(this.myForm.value.userEmail, this.myForm.value.userPassword))
-            {
-                this.router.navigateByUrl('/main');
-            }
-            else
-            {
-                alert("Что-то не так");
-            }
+        if(this.auth.login(this.myForm.value.userEmail, this.myForm.value.userPassword))
+        {
+            this.router.navigateByUrl('/main/dashboard');
+        }
+        else
+        {
+            alert("Что-то не так");
+        }
         
     }
 }

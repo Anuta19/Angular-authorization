@@ -32,16 +32,15 @@ export class AuthService {
     login(userEm: string, userPas: string): boolean
     {
         const result = this.userList.some((elem1) => {elem1;
-              if(elem1.email == userEm  && elem1.password == userPas)
-              {
-                return true;
-              }
-              else
-              {
-                return false;
-              }
+            if(elem1.email == userEm  && elem1.password == userPas)
+            {
+              return true;
+            }
+            else
+            {
+              return false;
+            }
           }); 
         return result;
-        
     }
 }

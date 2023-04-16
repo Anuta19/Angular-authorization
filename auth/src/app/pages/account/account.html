@@ -1,0 +1,37 @@
+<h2>Счета</h2>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="accountNumber">
+    <th mat-header-cell *matHeaderCellDef> account Number </th>
+    <td mat-cell *matCellDef="let element"> {{element.accountNumber}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="accountViewName">
+    <th mat-header-cell *matHeaderCellDef> account View Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.accountViewName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="clientShortName">
+    <th mat-header-cell *matHeaderCellDef> client Short Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.clientShortName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="balance">
+    <th mat-header-cell *matHeaderCellDef> balance </th>
+    <td mat-cell *matCellDef="let element"> {{element.balance}} </td>
+  </ng-container>
+
+   <ng-container matColumnDef="accountCurrency">
+    <th mat-header-cell *matHeaderCellDef> account Currency </th>
+    <td mat-cell *matCellDef="let element"> {{element.accountCurrency}} </td>
+  </ng-container>
+
+   <ng-container matColumnDef="accountCurrencyName">
+    <th mat-header-cell *matHeaderCellDef> account Currency Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.accountCurrencyName}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
