@@ -22,8 +22,8 @@ const appRoutes: Routes = [
 
 @NgModule({
     imports:      [ BrowserModule, RouterModule.forRoot(appRoutes), HttpClientModule,MatToolbarModule],
-    declarations: [ MainPage, ChildComponent],
-    bootstrap:    [ MainPage, ChildComponent]
+    declarations: [ MainPage],
+    bootstrap:    [ MainPage]
 })
 
 export class MainModule { }

@@ -5,6 +5,7 @@ import {Routes, RouterModule} from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent }   from './dashboard.component';
+import { ChildComponent }   from '../../features/main-page-course/main-page-course.component';
 
 
 const appRoutes: Routes = [
@@ -16,8 +17,8 @@ const appRoutes: Routes = [
 
 @NgModule({
     imports:      [ BrowserModule, RouterModule.forRoot(appRoutes), ReactiveFormsModule, HttpClientModule, FormsModule],
-    declarations: [ DashboardComponent ],
-    bootstrap:    [ DashboardComponent ]
+    declarations: [ DashboardComponent, ChildComponent ],
+    bootstrap:    [ DashboardComponent, ChildComponent ]
 
 })
 
